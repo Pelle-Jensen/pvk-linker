@@ -7,7 +7,6 @@
         <script>
             const slug = console.log(window.location.pathname);
 
-
             const getMobileOS = () => {
                 const ua = navigator.userAgent;
 
@@ -21,15 +20,20 @@
 
             switch (getMobileOS()) {
                 case "Android":
-                    const res = await fetch("polsevannkameratene://welcome");
-                    if (res.status === 200) {
-                        window.location.href = "polsevannkameratene://welcome";
-                    } else {
-                        window.location.href = "google.com";
-                    }
+                    fetch("polsevannkameratene://welcome").then((res) => {
+                        if (res.status === 200) {
+                            window.location.href = "polsevannkameratene://welcome";
+                        } else {
+                            window.location.href = "google.com";
+                        }
+                    });
+                    break;
                 case "iOS":
+                    break;
                 default:
-                }
+                    console.log("Not available on your device");
+                    break;
+            }
         </script>
     </body>
 </html>
