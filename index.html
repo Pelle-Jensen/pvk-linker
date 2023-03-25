@@ -22,10 +22,12 @@
             switch (os) {
                 case "Android":
                     //Check if app is installed
-                    setTimeout(() => {
+                    const wait = setTimeout(() => {
                         window.location.replace("https://google.com");
                     }, 100);
+                    
                     window.location.replace("polsevannkameratene://welcome");
+                    clearTimeout(wait);
                     break;
                 case "iOS":
                     break;
