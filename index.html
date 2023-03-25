@@ -2,39 +2,47 @@
 <html lang="en">
     <head>
         <title>PVK deeplinker</title>
+        <link href="index.css" rel="stylesheet"></script>
     </head>
     <body>
         <script>
             const slug = console.log(window.location.pathname);
 
-            const getMobileOS = () => {
+            const getOS = () => {
                 const ua = navigator.userAgent;
 
-                if (/android/i.test(ua)) {
-                    return "Android";
-                } else if (/iPad|iPhone|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)) {
-                    return "iOS";
-                }
+                if (/android/i.test(ua)) return "Android";
+                if (/iPad|iPhone|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)) return "iOS";
+
                 return "Other";
             };
 
-            switch (getMobileOS()) {
+            console.log(getOS());
+
+            switch (getOS()) {
                 case "Android":
+                    //Check if app is installed
                     fetch("polsevannkameratene://welcome").then((res) => {
                         if (res.status === 200) {
-                            window.location.href = "polsevannkameratene://welcome";
+                            //If installed
+                            window.location = "polsevannkameratene://welcome";
                         } else {
-                            window.location.href = "google.com";
+                            //If not installed
+                            window.location = "https://google.com";
                         }
                     });
                     break;
                 case "iOS":
                     break;
                 default:
-                    console.log("Not available on your device");
-                    window.location.href = "google.com";
+                    console.log("Redir not available on device");
                     break;
             }
         </script>
+        <!--Fallback-->
+
+        <div class="wrapper">
+            <h1>Last ned Pølsevannkamerat appen her!</h1>
+        </div>
     </body>
 </html>
