@@ -6,10 +6,9 @@
     </head>
     <body>
         <script>
-            const slug = console.log(window.location.pathname);
-
             const getOS = () => {
                 const ua = navigator.userAgent;
+                console.log(ua);
 
                 if (/android/i.test(ua)) return "Android";
                 if (/iPad|iPhone|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)) return "iOS";
@@ -17,25 +16,21 @@
                 return "Other";
             };
 
-            console.log(getOS());
+            const os = getOS();
+            console.log(os);
 
-            switch (getOS()) {
+            switch (os) {
                 case "Android":
                     //Check if app is installed
-                    fetch("polsevannkameratene://welcome").then((res) => {
-                        if (res.status === 200) {
-                            //If installed
-                            window.location = "polsevannkameratene://welcome";
-                        } else {
-                            //If not installed
-                            window.location = "https://google.com";
-                        }
-                    });
+                    setTimeout(() => {
+                        window.location.replace("https://google.com");
+                    }, 100);
+                    window.location.replace("polsevannkameratene://welcome");
                     break;
                 case "iOS":
                     break;
                 default:
-                    console.log("Redir not available on device");
+                    console.warn("App not available on this device");
                     break;
             }
         </script>
