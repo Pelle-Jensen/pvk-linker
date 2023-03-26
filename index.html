@@ -5,6 +5,12 @@
         <link href="index.css" rel="stylesheet"></script>
     </head>
     <body>
+        
+        <!--Fallback-->
+        <div class="wrapper">
+            <h1>Last ned Pølsevannkamerat appen her!</h1>
+        </div>
+
         <script>
             const getOS = () => {
                 const ua = navigator.userAgent;
@@ -22,12 +28,14 @@
             switch (os) {
                 case "Android":
                     //Check if app is installed
-                    const wait = setTimeout(() => {
-                        window.location.replace("https://google.com");
-                    }, 100);
-                    
-                    window.location.replace("polsevannkameratene://welcome");
-                    clearTimeout(wait);
+                    try {
+                        var xhttp = new XMLHttpRequest();
+                        xhttp.open("GET", "polsevannkameratene://welcome", false);
+                        xhttp.send();
+                    } catch (err) {
+                        console.log(err + "WOOOO");
+                    }
+
                     break;
                 case "iOS":
                     break;
@@ -36,10 +44,5 @@
                     break;
             }
         </script>
-        <!--Fallback-->
-
-        <div class="wrapper">
-            <h1>Last ned Pølsevannkamerat appen her!</h1>
-        </div>
     </body>
 </html>
