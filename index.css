@@ -1,8 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;700&display=swap');
+
 html, body {
     margin: 0;
     overflow-x: hidden;
     background-color: #200c0e;
     color: #fee8c8;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    color: #d0352e;
+    text-decoration: none;
 }
 
 .wrapper {
@@ -11,6 +19,17 @@ html, body {
     height: 100dvh;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.logos-wrapper {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.img {
+    max-width: 100%;
 }
