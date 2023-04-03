@@ -27,15 +27,7 @@
 
             switch (os) {
                 case "Android":
-                    //Check if app is installed
-                    try {
-                        var xhttp = new XMLHttpRequest();
-                        xhttp.open("GET", "polsevannkameratene://welcome", false);
-                        xhttp.send();
-                    } catch (err) {
-                        window.location = "https://google.com"
-                    }
-
+                    window.location = "https://google.com"
                     break;
                 case "iOS":
                     break;
