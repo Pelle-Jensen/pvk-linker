@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>PVK deeplinker</title>
+        <title>PVK Premium</title>
         <link href="index.css" rel="stylesheet"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
         
         <!--Fallback-->
-        <div class="wrapper">
-            <div>
+        <div class="container">
+            <nav class="header">
+                <a href="/">Home</a>
+                <a href="/privacy">Privacy policy</a>
+            </nav>
+
+            <div class="content-wrapper">
                 <img width="300px" draggable="false" src="img/logo.png" alt="PVK Logo"/>
+                <h1>På utkikk etter PVK Premium appen?</h1>
+                <div class="logos-wrapper">
+                    <a><img width="200" draggable="false" src="img/play.png" alt="Download on Google Play store"/></a>
+                    <a><img width="200" draggable="false" src="img/appstore.png" alt="Download from Apple App store"/></a>
+                </div>
+
             </div>
-            <h1>På utkikk etter PVK Premium appen?</h1>
-            <div class="logos-wrapper">
-                <a><img width="200" draggable="false" src="img/play.png" alt="Download on Google Play store"/></a>
-                <a><img width="200" draggable="false" src="img/appstore.png" alt="Download from Apple App store"/></a>
+            <div class="footer">
+                <!--<p>Utviklet av <a href="https://gentsgroup.no" target="_blank">Gent Group</a></p>-->
             </div>
-            <p>Utviklet av <a href="https://gentsgroup.no" target="_blank">Gentsoft</a></p>
         </div>
 
         <script>
@@ -35,8 +44,10 @@
 
             switch (os) {
                 case "Android":
+                    //Link to playstore
                     break;
                 case "iOS":
+                    //Link to appstore
                     break;
                 default:
                     console.warn("App not available on this device");
