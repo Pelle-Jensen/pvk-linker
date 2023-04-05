@@ -10,5 +10,17 @@
                 "78:0D:67:6C:D9:06:43:61:97:08:CC:64:2D:43:E1:98:35:06:8B:A6:C0:B5:BF:64:DA:63:57:4C:A4:EE:3F:D9"
             ]
         }
+    },
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "no.gentsgroup.polsevannkameratene",
+            "sha256_cert_fingerprints": [
+                "5B:6F:EB:4A:A5:D6:7F:2C:93:EA:FC:8E:39:64:FD:B0:84:35:0E:87:89:CC:90:F0:7C:5D:4A:91:6B:E5:01:C2"
+            ]
+        }
     }
 ]
